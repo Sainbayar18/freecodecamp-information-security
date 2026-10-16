@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A real-time multiplayer collection game.">
+  <title>Collect & Connect — Multiplayer Arena</title>
+  <link rel="stylesheet" href="/public/style.css">
+  <script src="/public/socket.io.js"></script>
+  <script src="/public/game.mjs" type="module"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">MULTIPLAYER ARENA</p>
+      <h1>Collect & Connect</h1>
+      <p>Collect the green gems. Climb the leaderboard together.</p>
+    </header>
+    <div class="toolbar">
+      <p id="connection" role="status">Connecting to the arena…</p>
+      <button id="connection-toggle" type="button">Disconnect</button>
+    </div>
+    <div class="layout">
+      <section aria-label="Game arena">
+        <canvas id="game-window" width="640" height="480" tabindex="0" aria-label="Multiplayer arena. Use arrow keys or W A S D to move your avatar.">Your browser needs HTML Canvas support to play.</canvas>
+        <div class="instructions"><span class="legend"></span> You are the green square. Use <strong>W A S D</strong> or <strong>arrow keys</strong>.</div>
+        <div class="direction-pad" aria-label="Movement controls">
+          <button type="button" data-direction="up" aria-label="Move up">↑</button>
+          <div><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div>
+        </div>
+      </section>
+      <aside aria-labelledby="leaderboard-title">
+        <h2 id="leaderboard-title">Leaderboard</h2>
+        <p id="my-score">Score: 0</p>
+        <p id="my-rank">Rank: —</p>
+        <ol id="leaderboard"></ol>
+        <p class="hint">Open this page in another tab to play with a second avatar.</p>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
+
